@@ -1,4 +1,4 @@
-#Esercizio DB University - 2 
+# Esercizio DB University - 2 
 
 **1. Selezionare tutti gli studenti nati nel 1990 (160)**
 ```SQL
