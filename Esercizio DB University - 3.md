@@ -2,9 +2,9 @@
 
 **1. Contare quanti iscritti ci sono stati ogni anno**
 ```sql
-SELECT enrolment_date, COUNT(id) "numero_iscritti"
+SELECT YEAR(enrolment_date), COUNT(id) "numero_iscritti"
 FROM students
-  GROUP BY enrolment_date;
+  GROUP BY YEAR(enrolment_date;
 ```
 
 **2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio**
@@ -50,7 +50,7 @@ WHERE degrees.level LIKE "magistrale" AND departments.name LIKE "Dipartimento di
 
 **3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)**
 ```sql
-SELECT name
+SELECT courses.name
 FROM courses
   JOIN course_teacher
   ON course_teacher.course_id = courses.id
@@ -82,7 +82,7 @@ FROM degrees
 
 **6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)**
 ```sql
-SELECT teachers.name, teachers.surname
+SELECT DISTINCT teachers.name, teachers.surname
 FROM teachers
 JOIN course_teacher
     ON teachers.id = course_teacher.teacher_id
